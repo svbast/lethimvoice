@@ -1,0 +1,8 @@
+{
+	// Editors only read files named `tsconfig.json`, so without this every .tsx
+	// landed in an inferred project that never loaded src/env.d.ts.
+	"extends": "./tsconfig.web.json",
+	"compilerOptions": {
+		"tsBuildInfoFile": "../node_modules/.tmp/tsconfig.editor.tsbuildinfo"
+	}
+}

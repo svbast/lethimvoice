@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+	"dynamicallyLoaded": [
+		"electron/preload.ts",
+		"electron/pipeline/paste.*.ts",
+		"electron/permissions.mac.ts",
+		"electron/shortcuts/{uiohook,uiohook.win,portal.linux}.ts",
+		"electron/shortcuts/keystate.{win,mac}.ts",
+		"electron/desktop-entry.linux.ts",
+		"electron/runtime/fakeServer.fixture.ts"
+	],
+	"entry": ["start-electron.mts"],
+	"health": {
+		"maxCrap": 10000,
+		// Pixel art: per-pixel drawing maths (mascot loops, the pill icon and effects,
+		// tile animations). Branchy by nature; splitting it would only scatter one
+		// picture over many functions.
+		"thresholdOverrides": [
+			{
+				"files": ["src/pixel/**"],
+				"maxCognitive": 120,
+				"maxCyclomatic": 70,
+				"maxUnitSize": 120,
+				"reason": "per-pixel drawing code, branchy by nature"
+			}
+		]
+	},
+	// Installed with the NVIDIA driver, not a package (runtime/recommend.ts).
+	"ignoreBinaries": ["nvidia-smi"],
+	"ignoreDependencies": ["react", "react-dom"],
+	"ignoreExports": [
+		{
+			"exports": ["transcribe", "postProcess"],
+			"file": "electron/pipeline/{cloud,local}.ts"
+		},
+		{
+			"exports": ["download", "cancel", "remove", "status"],
+			"file": "electron/runtime/{engines,models}.ts"
+		},
+		{
+			"exports": ["default"],
+			"file": "src/windows/{RecordingPill,SettingsWindow/SettingsWindow}.tsx"
+		},
+		{
+			"exports": ["handlers"],
+			"file": "electron/ipc/*.ts"
+		}
+	],
+	"usedClassMembers": ["hasInterface"]
+}

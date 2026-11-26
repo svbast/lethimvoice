@@ -1,0 +1,21 @@
+*                                       text=auto
+*.*ignore               text
+
+*.css                   text            diff=css
+*.html                  text            diff=html
+*.ico                   binary
+*.js                    text
+*.json                  text
+*.lock                  text            -diff
+*.md                    text            diff=markdown
+*.png                   binary
+*.svg                   text
+*.ts                    text
+*.tsx                   text
+*.txt                   text
+*.yml                   text
+
+.gitattributes          text
+
+package.json            text            eol=lf
+tsconfig.*                              linguist-language=JSON-with-Comments

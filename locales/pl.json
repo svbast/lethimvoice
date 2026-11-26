@@ -1,0 +1,465 @@
+{
+	"about": {
+		"feedback": "Zostaw opinię i sugestie",
+		"heroDesc": "Darmowy i z otwartym kodem źródłowym.",
+		"issue": "Zgłoś błąd",
+		"source": "Kod źródłowy",
+		"storyP1": "LetHim Voice jest tu z jednego prostego powodu: aby nieco ułatwić Ci codzienną pracę.",
+		"storyP2": "Zaczęło się od pomysłu dwóch osób, które po prostu chciały pracować szybciej. Zbudowaliśmy go, by przyspieszyć własną codzienną rutynę — a pomógł na tyle, że zatrzymanie go dla siebie byłoby niewłaściwe. Dlatego otwarcie dzielimy się nim ze społecznością, w wersji Beta — możesz go wypróbować i kształtować swoimi opiniami. Będzie się dalej rozwijał i ulepszał.",
+		"update": {
+			"auto": "Automatycznie sprawdzaj aktualizacje",
+			"available": "Dostępna aktualizacja",
+			"checking": "Szukanie aktualizacji…",
+			"checkNow": "Sprawdź teraz",
+			"download": "Pobierz",
+			"downloading": "Pobieranie wersji {version}… {percent}%",
+			"failed": "Nie udało się zaktualizować",
+			"failedDesc": "Spróbuj ponownie później albo pobierz nową wersję ze strony wydań.",
+			"lastChecked": "Ostatnio sprawdzono {when}.",
+			"manual": "Aktualizacje",
+			"manualDesc": "Ta kopia nie aktualizuje się sama. Nowe wersje są na stronie wydań.",
+			"notChecked": "Jeszcze nie sprawdzono.",
+			"portable": "Wyszła wersja {version}. Wersja przenośna nie aktualizuje się sama, pobierz nową.",
+			"ready": "Wersja {version} jest pobrana i gotowa do instalacji.",
+			"restart": "Uruchom ponownie i zaktualizuj"
+		},
+		"version": "Wersja"
+	},
+	"app": {
+		"hide": "Ukryj",
+		"minimize": "Minimalizuj",
+		"sections": "Sekcje"
+	},
+	"common": {
+		"cancel": "Anuluj",
+		"delete": "Usuń",
+		"recordings": {
+			"few": "{n} nagrania",
+			"many": "{n} nagrań",
+			"one": "{n} nagranie",
+			"other": "{n} nagrania"
+		},
+		"save": "Zapisz",
+		"settings": "Ustawienia",
+		"today": "Dziś"
+	},
+	"engine": {
+		"active": "Aktywny",
+		"cloud": {
+			"desc": "Transkrypcja i porządkowanie tekstu działają przez Groq API. Wymaga klucza API i internetu.",
+			"title": "Tryb online (Groq API)"
+		},
+		"off": "Wyłączony"
+	},
+	"errors": {
+		"auth": "Nieprawidłowy klucz API",
+		"build": "Brak pliku do pobrania dla tej kompilacji",
+		"corrupt": "Plik modelu jest uszkodzony — pobierz go ponownie",
+		"disk": "Za mało miejsca na dysku do pobrania",
+		"empty": "Puste nagranie",
+		"engine": "Brak silnika lokalnego lub jest uszkodzony — pobierz go ponownie",
+		"http": "Błąd HTTP API",
+		"incomplete": "Pobieranie niekompletne — spróbuj ponownie",
+		"local": "Silnik lokalny zawiódł — spróbuj ponownie lub przełącz na Online",
+		"memory": "Za mało pamięci GPU/RAM — wybierz mniejszy model lub CPU",
+		"mic": "Mikrofon niedostępny",
+		"model": "Model lokalny nie jest zainstalowany",
+		"network": "Brak internetu",
+		"quota": "Osiągnięto limit Groq",
+		"retired": "Model mowy wyłączony — zaktualizuj aplikację",
+		"server": "Serwer API niedostępny",
+		"short": "Nagranie za krótkie",
+		"timeout": "Model lokalny ładuje się zbyt długo — spróbuj ponownie",
+		"unknown": "Błąd",
+		"vcredist": "Brak Microsoft Visual C++ Redistributable — zainstaluj go z aka.ms/vs/17/release/vc_redist.x64.exe"
+	},
+	"fx": {
+		"knock": "puk",
+		"miss": "pudło"
+	},
+	"guide": {
+		"offlineButton": "Skonfiguruj offline",
+		"offlineDesc": "Bez konta, głos nigdy nie opuszcza tego komputera. Modele pobierasz raz (do 5 GB).",
+		"offlineOn": "Tryb offline jest włączony: nie potrzeba konta ani klucza API. Modele i ustawienia są w zakładce Lokalny.",
+		"offlineTitle": "Offline",
+		"onlineDesc": "Darmowe konto Groq, najszybciej. Kroki poniżej.",
+		"onlineTitle": "Online",
+		"setup1": "Zaloguj się lub utwórz darmowe konto.",
+		"setup2": "Otwórz sekcję „API Keys” i utwórz nowy klucz.",
+		"setup3": "Skopiuj go do zakładki Online → Klucz API Groq.",
+		"setup4": "Naciśnij przycisk Testuj, aby sprawdzić klucz. Zapisze się sam.",
+		"setup5": "W zakładce Ustawienia wybierz mikrofon, którym będziesz dyktować.",
+		"setupLink": "Otwórz Groq Console",
+		"setupTitle": "Konfiguracja (jednorazowo)",
+		"use1": "Kliknij w dowolne pole tekstowe — czat, e-mail, dokument.",
+		"use2": "Przytrzymaj swój skrót klawiszowy ({shortcut}) i mów.",
+		"use3": "Puść — tekst zostanie wklejony automatycznie.",
+		"use4": "W zakładce Prompty wybierz styl (Clean, Email, Chat, Lista zadań), aby ukształtować tekst.",
+		"useTitle": "Jak dyktować"
+	},
+	"history": {
+		"clearAll": "Wyczyść wszystko",
+		"confirmClear": "Usunąć wszystko?",
+		"copy": "Kopiuj",
+		"disabledNote": "Historia jest wyłączona — nowe dyktowania nie są zapisywane.",
+		"empty": "Brak nagrań",
+		"emptyDesc": "Twoja historia dyktowania pojawi się tutaj — każda transkrypcja gotowa do wglądu.",
+		"expand": "Kliknij, aby rozwinąć",
+		"last": "Ostatnio: {when}",
+		"localNote": "Przechowywane tylko na tym komputerze.",
+		"noMatch": "Żadna transkrypcja nie pasuje do wyszukiwania.",
+		"nothingSaved": "Nic jeszcze nie zapisano",
+		"recent": "Ostatnie",
+		"save": {
+			"label": "Zapisuj historię"
+		},
+		"search": "Szukaj w transkrypcjach…",
+		"yesterday": "Wczoraj"
+	},
+	"home": {
+		"dictation": "Dyktowanie",
+		"heroDesc": "Przytrzymaj {keys} i mów.",
+		"heroOffDesc": "Dyktowanie jest wyłączone: skrót nic nie zrobi, dopóki go nie włączysz.",
+		"modeLocal": "Offline · głos zostaje na tym komputerze",
+		"modeOnline": "Online · Groq API",
+		"statusOff": "Nagrywanie wyłączone",
+		"statusReady": "Gotowe do nagrywania"
+	},
+	"local": {
+		"advanced": "Zaawansowane: silniki i modele",
+		"auto": "Auto",
+		"compute": {
+			"desc": "Jak działają modele lokalne.",
+			"label": "Obliczenia"
+		},
+		"cpu": "CPU",
+		"cpuFallback": "GPU zawiodło — modele lokalne działają na CPU",
+		"deleteInUse": "Usunąć używany model?",
+		"download": "Pobierz",
+		"downloadFailed": "Pobieranie nie powiodło się",
+		"downloading": "Pobieram…",
+		"engineRuntime": "Środowisko silnika",
+		"gpu": "GPU",
+		"gpuDetected": "Wykryto GPU: {name}",
+		"hero": "Tryb lokalny",
+		"heroDesc": "W pełni offline. Włączenie wyłącza tryb Online.",
+		"hint": {
+			"open": "Zmień w zakładce Lokalny",
+			"prefs": "Twój model mowy offline dobrze rozpoznaje tylko angielski.",
+			"switch": "Przełącz",
+			"text": "{current} dobrze rozpoznaje tylko angielski. Dla tego języka dyktowania {suggested} jest znacznie dokładniejszy."
+		},
+		"idle": {
+			"desc": "Po tym czasie bez dyktowania modele zwalniają RAM i VRAM. Naciśnięcie skrótu wczytuje je ponownie.",
+			"hour": "1 godz.",
+			"label": "Zwolnij z pamięci",
+			"minutes": "{n} min",
+			"never": "Nigdy"
+		},
+		"installed": "Zainstalowano",
+		"llmEnable": {
+			"desc": "Poprawia transkrypcję modelem lokalnym. Wyłączone = wklejana jest surowa transkrypcja.",
+			"label": "Poprawa tekstu"
+		},
+		"llmModel": "Model poprawy tekstu",
+		"llmModels": "Poprawa tekstu (LLM)",
+		"loaded": "Modele załadowane do pamięci",
+		"loadFailed": "Nie udało się wczytać modelu",
+		"loading": "Wczytuję modele do pamięci…",
+		"noGpu": "Nie wykryto GPU — zostanie użyty CPU.",
+		"optionDownload": "do pobrania {size}",
+		"released": "Modele zwolnione z pamięci",
+		"releasing": "Zwalniam pamięć…",
+		"retryGpu": "Spróbuj GPU ponownie",
+		"setup": {
+			"busy": "Pobieram {n} z {total}…",
+			"button": "Skonfiguruj tryb lokalny",
+			"cancelAll": "Anuluj wszystko",
+			"doneDesc": "Przytrzymaj {shortcut} i mów — Twój głos nigdy nie opuszcza tego komputera.",
+			"download": "Pobierz zalecane · {size}",
+			"failed": "Konfiguracja nie powiodła się — {reason}",
+			"failedLlm": "Rozpoznawanie mowy jest gotowe, ale nie udało się pobrać poprawy tekstu — {reason}",
+			"later": "Nie teraz",
+			"llm": "Poprawa tekstu",
+			"mac": "Lokalne rozpoznawanie mowy nie jest jeszcze dostępne na macOS. Tryb Online działa.",
+			"noGpu": "Bez karty graficznej NVIDIA — mowa jest przetwarzana na CPU",
+			"noLlm": {
+				"cpu": "wyłączona — bez karty graficznej NVIDIA byłaby wolna",
+				"memory": "wyłączona — za mało pamięci"
+			},
+			"note": {
+				"engine": "{name} dla {accel}",
+				"engines": "Silniki ({engines}, {size}) pobierają się z pierwszym modelem.",
+				"one": "Wybierz jeden model mowy; przycisk pobiera zalecany.",
+				"pair": "Wybierz jeden model mowy; przycisk pobiera zalecaną parę."
+			},
+			"ok": "Rozumiem",
+			"queued": "W kolejce",
+			"ready": "Gotowe",
+			"recommended": "Zalecane",
+			"retry": "Spróbuj ponownie",
+			"slow": "Bez karty graficznej NVIDIA dyktowanie trwa kilka sekund dłużej.",
+			"stepStt": "Pobieram rozpoznawanie mowy…",
+			"tile": {
+				"base": "tylko angielski",
+				"gemma": "poprawia tekst",
+				"large": "najlepsza jakość",
+				"llm": "Poprawa",
+				"stt": "Mowa",
+				"turbo": "szybki, mały"
+			},
+			"title": "Zalecane dla tego komputera",
+			"unavailable": "Tryb lokalny nie jest tu dostępny"
+		},
+		"sttModel": "Model rozpoznawania mowy",
+		"sttModels": "Rozpoznawanie mowy (Whisper)",
+		"test": "Testuj modele",
+		"testing": "Testowanie… (ładowanie modeli, może chwilę potrwać)",
+		"testSkipped": "Wyłączone",
+		"unsupported": "Niedostępne dla tego urządzenia",
+		"verifying": "Weryfikuję…"
+	},
+	"modes": {
+		"addCustom": "Dodaj własny tryb",
+		"assistant": {
+			"desc": "Odpowiada bezpośrednio na nadyktowane pytanie, a następnie wkleja odpowiedź.",
+			"title": "Asystent"
+		},
+		"chat": {
+			"desc": "Przepisuje jako krótką, swobodną wiadomość.",
+			"title": "Chat"
+		},
+		"clean": {
+			"desc": "Poprawia interpunkcję, gramatykę i wtrącenia. Zachowuje Twoje sformułowania.",
+			"title": "Clean"
+		},
+		"customTag": "Własny",
+		"editor": {
+			"instructions": "Instrukcje",
+			"name": "Nazwa",
+			"titleEdit": "Edycja trybu",
+			"titleNew": "Nowy tryb"
+		},
+		"email": {
+			"desc": "Przepisuje jako e-mail gotowy do wysłania.",
+			"title": "Email"
+		},
+		"hero": {
+			"custom": {
+				"few": "{n} własne",
+				"many": "{n} własnych",
+				"one": "{n} własny",
+				"other": "{n} własnego"
+			},
+			"modes": {
+				"few": "{n} tryby",
+				"many": "{n} trybów",
+				"one": "{n} tryb",
+				"other": "{n} trybu"
+			},
+			"plate": "Tryb",
+			"title": "Tryb {name}"
+		},
+		"instructionsPlaceholder": "Opisz, co zrobić z nadyktowanym tekstem…",
+		"namePlaceholder": "Nazwa, np. Przetłumacz na angielski",
+		"personal": {
+			"desc": "Twoje nazwy, terminy i to, o czym dyktujesz. Używane dwukrotnie: Whisper opiera się na tym podczas słuchania, a każdy tryb AI traktuje to jako wzorzec pisowni. Pisz słowa i kontekst, nie polecenia — instrukcje wpisuj we własnym trybie.",
+			"label": "Preferencje osobiste",
+			"placeholder": "Chcę to sprawdzić, a potem wprowadzić zmianę.\nNazywam się Piotr, pracuję nad aplikacją mobilną dla rowerzystów.\nFigma, Xcode, TestFlight, sprint, standup"
+		},
+		"raw": {
+			"desc": "Bez LLM — wkleja transkrypcję bez zmian. Najszybszy.",
+			"title": "Raw"
+		},
+		"rewrite": {
+			"desc": "Przepisuje nadyktowany tekst, poprawiając jego przejrzystość. Pełna kontrola — może swobodnie przeformułować.",
+			"title": "Przepisz"
+		},
+		"section": {
+			"desc": "Po transkrypcji przez Whisper aplikacja przepisuje tekst zgodnie z wybranym trybem. Clean, Email i Chat zachowują zabezpieczenie, by AI nigdy nie odpowiadała na dyktowanie; Przepisz i Asystent dają pełną kontrolę. Każdy tryb poza Raw dodaje przebieg AI.",
+			"label": "Przetwarzanie tekstu"
+		},
+		"todo": {
+			"desc": "Zamienia dyktowanie w uporządkowaną listę zadań.",
+			"title": "Lista zadań"
+		},
+		"translate": {
+			"desc": "Podaj język docelowy i tekst — wklei samo tłumaczenie.",
+			"title": "Tłumaczenie"
+		},
+		"untitled": "Tryb bez nazwy"
+	},
+	"nav": {
+		"about": "O aplikacji",
+		"history": "Historia",
+		"home": "Start",
+		"local": "Lokalny",
+		"online": "Online",
+		"prompts": "Prompty",
+		"stats": "Statystyki"
+	},
+	"navDesc": {
+		"about": "Wersja, aktualizacje i gdzie znaleźć projekt.",
+		"history": "Zapisana tylko na Twoim komputerze.",
+		"home": "Stan, konfiguracja i jak dyktować.",
+		"local": "Dyktowanie offline z modelami na Twoim komputerze.",
+		"online": "Transkrypcja i poprawianie tekstu przez Groq API.",
+		"prompts": "Jak aplikacja przerabia to, co mówisz.",
+		"settings": "Język, skrót, mikrofon i uruchamianie.",
+		"stats": "Ile dyktujesz i ile czasu dzięki temu oszczędzasz."
+	},
+	"notify": {
+		"llmFailBody": "Dyktowanie nadal działa, ale tekst wklejono bez poprawek. Jeśli to się powtarza, zaktualizuj aplikację.",
+		"llmFailTitle": "Nie udało się poprawić tekstu",
+		"llmLimitBody": "Dyktowanie nadal działa, ale tekst nie jest już poprawiany. Limit uzupełnia się na bieżąco — spróbuj później.",
+		"llmLimitTitle": "Dzienny limit Groq wyczerpany",
+		"modelRetiredBody": "Dyktowanie nadal działa na modelu zapasowym. Zaktualizuj aplikację, aby otrzymać jego następcę.",
+		"modelRetiredTitle": "Groq wyłączył jeden z modeli",
+		"pasteManualBody": "Naciśnij Ctrl+V, aby wkleić. Aby wklejać automatycznie, zainstaluj {tools}.",
+		"pasteManualTitle": "Wklej ręcznie",
+		"shortcutDeadBody": "Nie udało się ustawić globalnego skrótu. Uruchom aplikację ponownie; na Linuksie zaloguj się do sesji X11 lub środowiska graficznego z GNOME 48+ / KDE 6+.",
+		"shortcutDeadTitle": "Push-to-talk jest niedostępny"
+	},
+	"online": {
+		"hero": "Tryb online",
+		"hideKey": "Ukryj klucz",
+		"key": "Klucz API Groq",
+		"keyDesc": "Utwórz darmowy klucz na console.groq.com. Przechowywany tylko na tym komputerze.",
+		"keyPlaceholder": "gsk_…",
+		"models": {
+			"at": "ostatnio {time}",
+			"desc": "Który model obsłużył Twoje ostatnie dyktowanie. Gdy trafi na limit lub Groq go wyłączy, przejmuje kolejny w kolejce.",
+			"idle": "Pojawi się po pierwszym dyktowaniu.",
+			"llm": "Poprawa tekstu",
+			"state": {
+				"active": "Działa",
+				"failed": "Błąd",
+				"limited": "Limit wyczerpany",
+				"retired": "Wyłączony",
+				"standby": "Zapasowy"
+			},
+			"stt": "Zamiana mowy na tekst",
+			"title": "Modele Groq"
+		},
+		"showKey": "Pokaż klucz",
+		"test": "Testuj",
+		"testFail": "Błąd",
+		"testing": "Testowanie…",
+		"testOk": "Działa"
+	},
+	"permissions": {
+		"ax": {
+			"desc": "Wykrywanie skrótu w dowolnej aplikacji i wklejanie tekstu tam, gdzie piszesz.",
+			"label": "Dostępność"
+		},
+		"grant": "Zezwól",
+		"granted": "Zezwolono",
+		"mic": {
+			"desc": "Dostęp do mikrofonu jest zablokowany — zezwól na niego w Ustawieniach systemowych, aby nagrywać.",
+			"label": "Mikrofon"
+		},
+		"openSettings": "Otwórz Ustawienia systemowe",
+		"subtitle": "macOS wymaga Twojej zgody, aby LetHim Voice wykrywał skrót i wklejał tekst.",
+		"title": "Wymagane uprawnienia"
+	},
+	"pill": {
+		"clipboard": "W schowku",
+		"loading": "Wczytuję model…",
+		"nothing": "Nic nie usłyszano",
+		"slow": "Jeszcze przetwarzam…"
+	},
+	"preferences": {
+		"autostart": {
+			"desc": "Uruchamiaj LetHim Voice automatycznie przy logowaniu do systemu Windows (w zasobniku)",
+			"descLinux": "Uruchamiaj LetHim Voice automatycznie przy logowaniu (w zasobniku)",
+			"descMac": "Uruchamiaj LetHim Voice automatycznie po zalogowaniu (na pasku menu)",
+			"label": "Uruchamiaj z systemem Windows",
+			"labelLinux": "Uruchamiaj przy logowaniu",
+			"labelMac": "Uruchamiaj przy logowaniu"
+		},
+		"capture": {
+			"hint1": "F1–F12, litery, cyfry, kombinacje z {ctrl} {alt} {shift}.",
+			"hint2": "{esc} — anuluj.",
+			"hintMac": "Przytrzymaj {cmd} {opt} {ctl} lub F1–F12, litery, cyfry.",
+			"title": "Naciśnij nowy klawisz",
+			"titleMac": "Naciśnij klawisz lub przytrzymaj modyfikator"
+		},
+		"change": "Zmień",
+		"changeInSystem": "Zmień w ustawieniach systemu",
+		"deviceDefault": "Domyślny",
+		"hero": {
+			"micDefault": "Domyślny mikrofon",
+			"micOther": "Wybrany mikrofon",
+			"title": "Twoja konfiguracja"
+		},
+		"interfaceLanguage": "Język interfejsu",
+		"keepClipboard": {
+			"desc": "Podyktowany tekst pozostaje w schowku po wklejeniu i można go w każdej chwili wkleić ponownie. Gdy wyłączone, przywracana jest poprzednia zawartość schowka.",
+			"label": "Zachowaj tekst w schowku"
+		},
+		"microphone": "Mikrofon",
+		"microphoneFallback": "Mikrofon {id}",
+		"recognitionLanguage": "Język rozpoznawania",
+		"recognitionLanguageDesc": "Język, w którym mówisz.",
+		"section": {
+			"dictation": "Dyktowanie",
+			"general": "Ogólne",
+			"system": "System"
+		},
+		"shortcut": "Skrót klawiszowy",
+		"shortcutDesc": "Przytrzymaj, aby nagrywać, puść, aby wkleić.",
+		"shortcutSystemManaged": "Zarządzany przez system"
+	},
+	"stats": {
+		"activity": "Aktywność (ostatnie 12 miesięcy)",
+		"allTime": "Łącznie",
+		"barsLabel": "Czas dyktowania dzień po dniu w ostatnich 30 dniach",
+		"cloud": "Chmura",
+		"foot": "Średnie nagranie {avg} · Tokeny LLM: chmura {cloud}, lokalnie {local}",
+		"glance": "W skrócie",
+		"heatLabel": "Aktywność dyktowania dzień po dniu w ostatnich 12 miesiącach",
+		"hero": "Dziś zaoszczędzono {d}",
+		"heroBadge": {
+			"few": "{n} nagrania dziś",
+			"many": "{n} nagrań dziś",
+			"one": "{n} nagranie dziś",
+			"other": "{n} nagrania dziś"
+		},
+		"heroDesc": "Dyktowanie jest około 3–4× szybsze niż pisanie.",
+		"last30": "Ostatnie 30 dni",
+		"less": "Mniej",
+		"limit": {
+			"estimated": "szacunek",
+			"live": "zmierzone",
+			"llmReq": "Żądania LLM · {m}",
+			"llmTok": "Tokeny LLM · {m}",
+			"note": "Na podstawie dzisiejszego użycia względem oficjalnych dziennych limitów Groq. Przetwarzanie lokalne nie ma limitów.",
+			"sttAudio": "Transkrypcja audio · na godzinę",
+			"sttRequests": "Żądania Whisper",
+			"title": "Dzisiejsze wykorzystanie limitów Groq (darmowy plan)"
+		},
+		"local": "Lokalnie",
+		"more": "Więcej",
+		"noData": "Brak danych — zacznij dyktować.",
+		"row": {
+			"recordings": "Nagrania",
+			"saved": "Zaoszczędzony czas",
+			"spoken": "Czas mówienia",
+			"tokens": "Tokeny LLM"
+		},
+		"saved": {
+			"note": "Dyktowanie jest około 3–4× szybsze niż pisanie"
+		},
+		"thisMonth": "Ten miesiąc",
+		"thisYear": "Ten rok"
+	},
+	"status": {
+		"shortcut": "Skrót klawiszowy: {keys}"
+	},
+	"tray": {
+		"devRecording": "DevTools (nagrywanie)",
+		"devSettings": "DevTools (ustawienia)",
+		"quit": "Zakończ",
+		"update": "Uruchom ponownie i zaktualizuj do {version}"
+	}
+}

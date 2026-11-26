@@ -1,0 +1,457 @@
+{
+	"about": {
+		"feedback": "Leave feedback & requests",
+		"heroDesc": "Free and open source.",
+		"issue": "Report an issue",
+		"source": "View source",
+		"storyP1": "LetHim Voice is here for one simple reason: to make your everyday work a little easier.",
+		"storyP2": "It started as an idea between two people who just wanted to work faster. We built it to speed up our own daily routine — and it helped so much that keeping it to ourselves felt wrong. So we are sharing it openly with the community, in Beta, to be tried, tested, and shaped by your feedback. It will keep growing and getting better.",
+		"update": {
+			"auto": "Check for updates automatically",
+			"available": "Update available",
+			"checking": "Checking for updates…",
+			"checkNow": "Check now",
+			"download": "Download",
+			"downloading": "Downloading version {version}… {percent}%",
+			"failed": "Couldn't update",
+			"failedDesc": "Try again later, or download the new version from the releases page.",
+			"lastChecked": "Last checked {when}.",
+			"manual": "Updates",
+			"manualDesc": "This copy doesn't update itself. New versions are on the releases page.",
+			"notChecked": "Not checked yet.",
+			"portable": "Version {version} is out. The portable app can't update itself, so download the new one.",
+			"ready": "Version {version} is downloaded and ready to install.",
+			"restart": "Restart and update"
+		},
+		"version": "Version"
+	},
+	"app": {
+		"hide": "Hide",
+		"minimize": "Minimize",
+		"sections": "Sections"
+	},
+	"common": {
+		"cancel": "Cancel",
+		"delete": "Delete",
+		"recordings": {
+			"one": "{n} recording",
+			"other": "{n} recordings"
+		},
+		"save": "Save",
+		"settings": "Settings",
+		"today": "Today"
+	},
+	"engine": {
+		"active": "Active",
+		"cloud": {
+			"desc": "Transcription and text cleanup run through the Groq API. Requires an API key and internet.",
+			"title": "Online mode (Groq API)"
+		},
+		"off": "Off"
+	},
+	"errors": {
+		"auth": "Bad API key",
+		"build": "No download for this build yet",
+		"corrupt": "Model file is corrupt — re-download it",
+		"disk": "Not enough disk space for this download",
+		"empty": "Empty recording",
+		"engine": "Local engine missing or broken — download it again",
+		"http": "API HTTP error",
+		"incomplete": "Download incomplete — try again",
+		"local": "Local engine failed — try again or switch to Online",
+		"memory": "Not enough GPU/RAM memory — choose a smaller model or CPU",
+		"mic": "Microphone unavailable",
+		"model": "Local model not installed",
+		"network": "No internet",
+		"quota": "Groq limit reached",
+		"retired": "Speech model retired — update the app",
+		"server": "API server unavailable",
+		"short": "Recording too short",
+		"timeout": "Local model took too long to load — try again",
+		"unknown": "Error",
+		"vcredist": "Microsoft Visual C++ Redistributable is missing — install it from aka.ms/vs/17/release/vc_redist.x64.exe"
+	},
+	"fx": {
+		"knock": "knock",
+		"miss": "miss"
+	},
+	"guide": {
+		"offlineButton": "Set up offline",
+		"offlineDesc": "No account, your voice never leaves this PC. The models download once (up to 5 GB).",
+		"offlineOn": "Offline mode is on: no account or API key needed. Models and settings are in the Local tab.",
+		"offlineTitle": "Offline",
+		"onlineDesc": "Free Groq account, the fastest. Steps below.",
+		"onlineTitle": "Online",
+		"setup1": "Sign in, or create a free account.",
+		"setup2": "Open “API Keys” and create a new key.",
+		"setup3": "Copy it into the Online tab → Groq API key.",
+		"setup4": "Press Test to check the key. It saves itself.",
+		"setup5": "In the Settings tab, choose the microphone you’ll dictate with.",
+		"setupLink": "Open Groq Console",
+		"setupTitle": "Set up (one time)",
+		"use1": "Click into any text field — chat, email, a document.",
+		"use2": "Press and hold your shortcut ({shortcut}) and speak.",
+		"use3": "Release — your words are typed in automatically.",
+		"use4": "Pick a style in Prompts (Clean, Email, Chat, To Do List) to shape the text.",
+		"useTitle": "How to dictate"
+	},
+	"history": {
+		"clearAll": "Clear all",
+		"confirmClear": "Delete everything?",
+		"copy": "Copy",
+		"disabledNote": "History is off — new dictations aren't being saved.",
+		"empty": "No recordings yet",
+		"emptyDesc": "Your dictation history will appear here — every transcript, ready to look back up.",
+		"expand": "Click to expand",
+		"last": "Last: {when}",
+		"localNote": "Stored only on this computer.",
+		"noMatch": "No transcripts match your search.",
+		"nothingSaved": "Nothing saved yet",
+		"recent": "Recent",
+		"save": {
+			"label": "Save history"
+		},
+		"search": "Search transcripts…",
+		"yesterday": "Yesterday"
+	},
+	"home": {
+		"dictation": "Dictation",
+		"heroDesc": "Press and hold {keys} and speak.",
+		"heroOffDesc": "Dictation is off: your shortcut does nothing until you switch it on.",
+		"modeLocal": "Offline · your voice stays on this PC",
+		"modeOnline": "Online · Groq API",
+		"statusOff": "Recording disabled",
+		"statusReady": "Ready to record"
+	},
+	"local": {
+		"advanced": "Advanced: engines and models",
+		"auto": "Auto",
+		"compute": {
+			"desc": "How local models run.",
+			"label": "Compute"
+		},
+		"cpu": "CPU",
+		"cpuFallback": "GPU failed — local models run on CPU",
+		"deleteInUse": "Delete the model in use?",
+		"download": "Download",
+		"downloadFailed": "Download failed",
+		"downloading": "Downloading…",
+		"engineRuntime": "Engine runtime",
+		"gpu": "GPU",
+		"gpuDetected": "GPU detected: {name}",
+		"hero": "Local mode",
+		"heroDesc": "Fully offline. Turning it on switches Online off.",
+		"hint": {
+			"open": "Change it in the Local tab",
+			"prefs": "Your offline speech model recognizes only English well.",
+			"switch": "Switch",
+			"text": "{current} recognizes only English well. For this dictation language {suggested} is much more accurate."
+		},
+		"idle": {
+			"desc": "After this long without a dictation the models leave RAM and VRAM. Pressing the shortcut loads them again.",
+			"hour": "1 h",
+			"label": "Release from memory",
+			"minutes": "{n} min",
+			"never": "Never"
+		},
+		"installed": "Installed",
+		"llmEnable": {
+			"desc": "Cleans up the transcript with the local model. Off = the raw transcript is pasted.",
+			"label": "Text cleanup"
+		},
+		"llmModel": "Text cleanup model",
+		"llmModels": "Text cleanup (LLM)",
+		"loaded": "Models loaded into memory",
+		"loadFailed": "Couldn't load the model",
+		"loading": "Loading models into memory…",
+		"noGpu": "No GPU detected — will use CPU.",
+		"optionDownload": "{size} download",
+		"released": "Models released from memory",
+		"releasing": "Releasing memory…",
+		"retryGpu": "Retry GPU",
+		"setup": {
+			"busy": "Downloading {n} of {total}…",
+			"button": "Set up local mode",
+			"cancelAll": "Cancel all",
+			"doneDesc": "Hold {shortcut} and speak — your voice never leaves this computer.",
+			"download": "Download recommended · {size}",
+			"failed": "Setup failed — {reason}",
+			"failedLlm": "Speech recognition is ready, but text cleanup couldn't be downloaded — {reason}",
+			"later": "Not now",
+			"llm": "Text cleanup",
+			"mac": "Local speech recognition isn't available on macOS yet. Online mode works.",
+			"noGpu": "No NVIDIA graphics card — speech runs on the CPU",
+			"noLlm": {
+				"cpu": "off — slow without an NVIDIA graphics card",
+				"memory": "off — not enough memory"
+			},
+			"note": {
+				"engine": "{name} for {accel}",
+				"engines": "The engines ({engines}, {size}) come with the first model.",
+				"one": "Pick one speech model; the button downloads the recommended one.",
+				"pair": "Pick one speech model; the button downloads the recommended pair."
+			},
+			"ok": "Got it",
+			"queued": "Queued",
+			"ready": "Ready",
+			"recommended": "Recommended",
+			"retry": "Try again",
+			"slow": "Without an NVIDIA graphics card a dictation takes a few seconds longer.",
+			"stepStt": "Downloading speech recognition…",
+			"tile": {
+				"base": "English only",
+				"gemma": "tidies the text",
+				"large": "best quality",
+				"llm": "Cleanup",
+				"stt": "Speech",
+				"turbo": "fast, small"
+			},
+			"title": "Recommended for this computer",
+			"unavailable": "Local mode isn't available here"
+		},
+		"sttModel": "Speech recognition model",
+		"sttModels": "Speech recognition (Whisper)",
+		"test": "Test models",
+		"testing": "Testing… (loading models, this can take a while)",
+		"testSkipped": "Off",
+		"unsupported": "Not available for this device",
+		"verifying": "Verifying…"
+	},
+	"modes": {
+		"addCustom": "Add custom mode",
+		"assistant": {
+			"desc": "Answer your dictated question directly, then paste the answer.",
+			"title": "Assistant"
+		},
+		"chat": {
+			"desc": "Rewrite as a short, casual message.",
+			"title": "Chat"
+		},
+		"clean": {
+			"desc": "Fix punctuation, grammar and fillers. Keeps your wording.",
+			"title": "Clean"
+		},
+		"customTag": "Custom",
+		"editor": {
+			"instructions": "Instructions",
+			"name": "Name",
+			"titleEdit": "Edit mode",
+			"titleNew": "New mode"
+		},
+		"email": {
+			"desc": "Rewrite as a ready-to-send email.",
+			"title": "Email"
+		},
+		"hero": {
+			"custom": {
+				"one": "{n} custom",
+				"other": "{n} custom"
+			},
+			"modes": {
+				"one": "{n} mode",
+				"other": "{n} modes"
+			},
+			"plate": "Mode",
+			"title": "{name} mode"
+		},
+		"instructionsPlaceholder": "Describe what to do with the dictated text…",
+		"namePlaceholder": "Name, e.g. Translate to English",
+		"personal": {
+			"desc": "Your names, terms, and what you dictate about. Used twice: Whisper leans on it while listening, and every AI mode treats it as the spelling authority. Write words and context, not commands — instructions belong in a custom mode.",
+			"label": "Personal preferences",
+			"placeholder": "I want to check this and then make the change.\nMy name is Alex, I work on a mobile app for cyclists.\nFigma, Xcode, TestFlight, sprint, standup"
+		},
+		"raw": {
+			"desc": "No LLM — paste the transcript as-is. Fastest.",
+			"title": "Raw"
+		},
+		"rewrite": {
+			"desc": "Rewrite the dictated text with better clarity. Full-control — may rephrase freely.",
+			"title": "Rewrite"
+		},
+		"section": {
+			"desc": "After Whisper transcribes, the app rewrites the text using the selected mode. Clean, Email and Chat keep a safety guard so the AI never answers your dictation; Rewrite and Assistant are full-control. Every mode except Raw adds an AI pass.",
+			"label": "Text processing"
+		},
+		"todo": {
+			"desc": "Turn dictation into a structured checklist of tasks.",
+			"title": "To Do List"
+		},
+		"translate": {
+			"desc": "Say the target language and the text — it pastes only the translation.",
+			"title": "Translate"
+		},
+		"untitled": "Untitled mode"
+	},
+	"nav": {
+		"about": "About",
+		"history": "History",
+		"home": "Home",
+		"local": "Local",
+		"online": "Online",
+		"prompts": "Prompts",
+		"stats": "Statistics"
+	},
+	"navDesc": {
+		"about": "Version, updates and where to find the project.",
+		"history": "Stored only on this computer.",
+		"home": "Status, setup and how to dictate.",
+		"local": "Offline dictation with models on this computer.",
+		"online": "Transcription and cleanup through the Groq API.",
+		"prompts": "How the app rewrites what you say.",
+		"settings": "Language, shortcut, microphone and startup.",
+		"stats": "How much you dictate and what it saves you."
+	},
+	"notify": {
+		"llmFailBody": "Dictation still works, but the text was pasted without cleanup. If this keeps happening, update the app.",
+		"llmFailTitle": "Text cleanup failed",
+		"llmLimitBody": "Dictation still works, but text is no longer being cleaned up. Capacity refills continuously — try again later.",
+		"llmLimitTitle": "Groq daily limit reached",
+		"modelRetiredBody": "Dictation keeps working on a backup model. Update the app to get its replacement.",
+		"modelRetiredTitle": "Groq shut down a model",
+		"pasteManualBody": "Press Ctrl+V to paste. Install {tools} for automatic pasting.",
+		"pasteManualTitle": "Paste manually",
+		"shortcutDeadBody": "The global shortcut could not be set up. Restart the app; on Linux, log in to an X11 session or a desktop with GNOME 48+ / KDE 6+.",
+		"shortcutDeadTitle": "Push-to-talk is unavailable"
+	},
+	"online": {
+		"hero": "Online mode",
+		"hideKey": "Hide key",
+		"key": "Groq API key",
+		"keyDesc": "Create a free key at console.groq.com. Stored only on this computer.",
+		"keyPlaceholder": "gsk_…",
+		"models": {
+			"at": "last used {time}",
+			"desc": "Which model handled your last dictation. When one hits its limit or Groq shuts it down, the next in line takes over.",
+			"idle": "Shows after your first dictation.",
+			"llm": "Text cleanup",
+			"state": {
+				"active": "Running",
+				"failed": "Error",
+				"limited": "Limit reached",
+				"retired": "Shut down",
+				"standby": "Backup"
+			},
+			"stt": "Speech to text",
+			"title": "Groq models"
+		},
+		"showKey": "Show key",
+		"test": "Test",
+		"testFail": "Error",
+		"testing": "Testing…",
+		"testOk": "Working"
+	},
+	"permissions": {
+		"ax": {
+			"desc": "Detect your shortcut in any app and paste the text where you're typing.",
+			"label": "Accessibility"
+		},
+		"grant": "Allow",
+		"granted": "Allowed",
+		"mic": {
+			"desc": "Microphone access is denied — allow it in System Settings to record.",
+			"label": "Microphone"
+		},
+		"openSettings": "Open System Settings",
+		"subtitle": "macOS needs your approval before LetHim Voice can detect the shortcut and type text for you.",
+		"title": "Permissions needed"
+	},
+	"pill": {
+		"clipboard": "In clipboard",
+		"loading": "Loading model…",
+		"nothing": "Nothing heard",
+		"slow": "Still working…"
+	},
+	"preferences": {
+		"autostart": {
+			"desc": "Launch LetHim Voice automatically at Windows login (in tray)",
+			"descLinux": "Launch LetHim Voice automatically at login (in tray)",
+			"descMac": "Launch LetHim Voice automatically at login (menu bar)",
+			"label": "Start with Windows",
+			"labelLinux": "Start at login",
+			"labelMac": "Start at login"
+		},
+		"capture": {
+			"hint1": "F1–F12, letters, digits, combinations with {ctrl} {alt} {shift}.",
+			"hint2": "{esc} — cancel.",
+			"hintMac": "Hold {cmd} {opt} {ctl}, or F1–F12, letters, digits.",
+			"title": "Press a new key",
+			"titleMac": "Press a key or hold a modifier"
+		},
+		"change": "Change",
+		"changeInSystem": "Change in system settings",
+		"deviceDefault": "Default",
+		"hero": {
+			"micDefault": "Default microphone",
+			"micOther": "Chosen microphone",
+			"title": "Your setup"
+		},
+		"interfaceLanguage": "Interface language",
+		"keepClipboard": {
+			"desc": "The dictation stays in the clipboard after pasting, so you can paste it again anytime. When off, your previous clipboard content is restored.",
+			"label": "Keep text in clipboard"
+		},
+		"microphone": "Microphone",
+		"microphoneFallback": "Microphone {id}",
+		"recognitionLanguage": "Recognition language",
+		"recognitionLanguageDesc": "The language you speak.",
+		"section": {
+			"dictation": "Dictation",
+			"general": "General",
+			"system": "System"
+		},
+		"shortcut": "Shortcut",
+		"shortcutDesc": "Hold it to record, release to paste.",
+		"shortcutSystemManaged": "Managed by the system"
+	},
+	"stats": {
+		"activity": "Activity (last 12 months)",
+		"allTime": "All time",
+		"barsLabel": "Dictated time per day over the last 30 days",
+		"cloud": "Cloud",
+		"foot": "Average recording {avg} · LLM tokens: cloud {cloud}, local {local}",
+		"glance": "At a glance",
+		"heatLabel": "Dictation activity per day over the last 12 months",
+		"hero": "{d} saved today",
+		"heroBadge": {
+			"one": "{n} recording today",
+			"other": "{n} recordings today"
+		},
+		"heroDesc": "Dictating is about 3–4× faster than typing.",
+		"last30": "Last 30 days",
+		"less": "Less",
+		"limit": {
+			"estimated": "estimate",
+			"live": "live",
+			"llmReq": "LLM requests · {m}",
+			"llmTok": "LLM tokens · {m}",
+			"note": "From today's usage against Groq's official daily limits. Local processing has no limits.",
+			"sttAudio": "Speech audio · per hour",
+			"sttRequests": "Whisper requests",
+			"title": "Today's Groq limit usage (free tier)"
+		},
+		"local": "Local",
+		"more": "More",
+		"noData": "No data yet — start dictating.",
+		"row": {
+			"recordings": "Recordings",
+			"saved": "Time saved",
+			"spoken": "Time spoken",
+			"tokens": "LLM tokens"
+		},
+		"saved": {
+			"note": "Dictating is about 3–4× faster than typing"
+		},
+		"thisMonth": "This month",
+		"thisYear": "This year"
+	},
+	"status": {
+		"shortcut": "Shortcut: {keys}"
+	},
+	"tray": {
+		"devRecording": "DevTools (recording)",
+		"devSettings": "DevTools (settings)",
+		"quit": "Quit",
+		"update": "Restart and update to {version}"
+	}
+}

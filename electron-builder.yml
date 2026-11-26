@@ -1,0 +1,57 @@
+appId: com.lethim.voice
+productName: LetHim Voice
+npmRebuild: false
+artifactName: ${name}-${version}-${os}-${arch}.${ext}
+win:
+  target:
+    - target: nsis
+    - target: portable
+
+mac:
+  category: public.app-category.productivity
+  identity: null
+  extendInfo:
+    NSAppSleepDisabled: true
+    NSMicrophoneUsageDescription: Records your voice to transcribe it into text.
+
+dmg:
+  title: ${productName}
+
+linux:
+  target: [AppImage, deb, rpm, tar.gz]
+  category: Utility
+  icon: assets/window.png
+  executableName: lethim-voice
+  desktop:
+    entry:
+      StartupWMClass: lethim-voice
+
+afterPack: build/afterPack.ts
+
+# Where the updater looks (resources/app-update.yml) and what the latest*.yml files
+# name. The build itself never publishes (--publish never); CI uploads them.
+publish:
+  provider: github
+  owner: svbast
+  repo: lethimvoice
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  artifactName: ${name}-${version}-${os}-${arch}-installer.${ext}
+
+portable:
+  artifactName: ${name}-${version}-${os}-${arch}-portable.${ext}
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - '!dist-electron/**/*.map'
+  - assets/**/*
+  - locales/**/*
+
+asarUnpack:
+  - node_modules/@koromix/**
+
+directories:
+  output: release

@@ -1,0 +1,465 @@
+{
+	"about": {
+		"feedback": "Zanechat zpětnou vazbu a požadavky",
+		"heroDesc": "Zdarma a s otevřeným zdrojovým kódem.",
+		"issue": "Nahlásit chybu",
+		"source": "Zdrojový kód",
+		"storyP1": "LetHim Voice je tu z jediného důvodu: aby vám trochu usnadnil každodenní práci.",
+		"storyP2": "Vznikl jako nápad dvou lidí, kteří chtěli prostě pracovat rychleji. Postavili jsme ho, aby zrychlil naši vlastní denní rutinu — a pomohl natolik, že nechat si ho jen pro sebe by nebylo fér. Proto ho otevřeně sdílíme s komunitou, ve stavu Beta, abyste ho vyzkoušeli a formovali svou zpětnou vazbou. Bude se dál vyvíjet a zdokonalovat.",
+		"update": {
+			"auto": "Automaticky kontrolovat aktualizace",
+			"available": "K dispozici je aktualizace",
+			"checking": "Hledají se aktualizace…",
+			"checkNow": "Zkontrolovat teď",
+			"download": "Stáhnout",
+			"downloading": "Stahuje se verze {version}… {percent} %",
+			"failed": "Aktualizace se nezdařila",
+			"failedDesc": "Zkuste to později znovu, nebo si novou verzi stáhněte ze stránky vydání.",
+			"lastChecked": "Naposledy zkontrolováno {when}.",
+			"manual": "Aktualizace",
+			"manualDesc": "Tato kopie se sama neaktualizuje. Nové verze jsou na stránce vydání.",
+			"notChecked": "Zatím nezkontrolováno.",
+			"portable": "Vyšla verze {version}. Přenosná verze se neumí aktualizovat sama, stáhněte si novou.",
+			"ready": "Verze {version} je stažená a připravená k instalaci.",
+			"restart": "Restartovat a aktualizovat"
+		},
+		"version": "Verze"
+	},
+	"app": {
+		"hide": "Skrýt",
+		"minimize": "Minimalizovat",
+		"sections": "Sekce"
+	},
+	"common": {
+		"cancel": "Zrušit",
+		"delete": "Smazat",
+		"recordings": {
+			"few": "{n} nahrávky",
+			"many": "{n} nahrávky",
+			"one": "{n} nahrávka",
+			"other": "{n} nahrávek"
+		},
+		"save": "Uložit",
+		"settings": "Nastavení",
+		"today": "Dnes"
+	},
+	"engine": {
+		"active": "Aktivní",
+		"cloud": {
+			"desc": "Přepis a úprava textu běží přes Groq API. Vyžaduje klíč API a internet.",
+			"title": "Online režim (Groq API)"
+		},
+		"off": "Vypnuto"
+	},
+	"errors": {
+		"auth": "Neplatný klíč API",
+		"build": "Toto sestavení zatím není ke stažení",
+		"corrupt": "Soubor modelu je poškozen — stáhněte jej znovu",
+		"disk": "Na disku není dost místa pro stažení",
+		"empty": "Prázdná nahrávka",
+		"engine": "Lokální engine chybí nebo je poškozen — stáhněte jej znovu",
+		"http": "Chyba HTTP API",
+		"incomplete": "Stahování nedokončeno — zkuste to znovu",
+		"local": "Lokální engine selhal — zkuste to znovu nebo přepněte na Online",
+		"memory": "Nedostatek paměti GPU/RAM — zvolte menší model nebo CPU",
+		"mic": "Mikrofon nedostupný",
+		"model": "Lokální model není nainstalován",
+		"network": "Bez internetu",
+		"quota": "Dosažen limit Groq",
+		"retired": "Model řeči ukončen — aktualizujte aplikaci",
+		"server": "Server API nedostupný",
+		"short": "Nahrávka příliš krátká",
+		"timeout": "Načítání lokálního modelu trvá příliš dlouho — zkuste to znovu",
+		"unknown": "Chyba",
+		"vcredist": "Chybí Microsoft Visual C++ Redistributable — nainstalujte jej z aka.ms/vs/17/release/vc_redist.x64.exe"
+	},
+	"fx": {
+		"knock": "ťuk",
+		"miss": "vedle"
+	},
+	"guide": {
+		"offlineButton": "Nastavit offline",
+		"offlineDesc": "Bez účtu, hlas nikdy neopustí tento PC. Modely se stáhnou jednou (až 5 GB).",
+		"offlineOn": "Offline režim je zapnutý: není potřeba účet ani klíč API. Modely a nastavení najdete na kartě Lokální.",
+		"offlineTitle": "Offline",
+		"onlineDesc": "Bezplatný účet Groq, nejrychlejší. Postup níže.",
+		"onlineTitle": "Online",
+		"setup1": "Přihlaste se, nebo si vytvořte bezplatný účet.",
+		"setup2": "Otevřete „API Keys“ a vytvořte nový klíč.",
+		"setup3": "Zkopírujte jej na kartu Online → Klíč API Groq.",
+		"setup4": "Stiskněte Test a ověřte klíč. Uloží se sám.",
+		"setup5": "Na kartě Nastavení vyberte mikrofon, kterým budete diktovat.",
+		"setupLink": "Otevřít Groq Console",
+		"setupTitle": "Nastavení (jednorázově)",
+		"use1": "Klikněte do libovolného textového pole — chat, e-mail, dokument.",
+		"use2": "Podržte svou klávesovou zkratku ({shortcut}) a mluvte.",
+		"use3": "Pusťte — text se vloží automaticky.",
+		"use4": "V Promptech vyberte styl (Clean, E-mail, Chat, Seznam úkolů), který text upraví.",
+		"useTitle": "Jak diktovat"
+	},
+	"history": {
+		"clearAll": "Smazat vše",
+		"confirmClear": "Opravdu smazat vše?",
+		"copy": "Kopírovat",
+		"disabledNote": "Historie je vypnutá — nové přepisy se neukládají.",
+		"empty": "Zatím žádné nahrávky",
+		"emptyDesc": "Vaše historie diktování se objeví zde — každý přepis připravený k dohledání.",
+		"expand": "Kliknutím rozbalíte",
+		"last": "Naposledy: {when}",
+		"localNote": "Uloženo pouze v tomto počítači.",
+		"noMatch": "Vašemu hledání neodpovídají žádné přepisy.",
+		"nothingSaved": "Zatím nic uloženo",
+		"recent": "Nedávné",
+		"save": {
+			"label": "Ukládat historii"
+		},
+		"search": "Hledat v přepisech…",
+		"yesterday": "Včera"
+	},
+	"home": {
+		"dictation": "Diktování",
+		"heroDesc": "Podržte {keys} a mluvte.",
+		"heroOffDesc": "Diktování je vypnuté: zkratka nic neudělá, dokud ho nezapnete.",
+		"modeLocal": "Offline · hlas zůstává v tomto PC",
+		"modeOnline": "Online · Groq API",
+		"statusOff": "Nahrávání vypnuto",
+		"statusReady": "Připraveno k nahrávání"
+	},
+	"local": {
+		"advanced": "Pokročilé: programy a modely",
+		"auto": "Auto",
+		"compute": {
+			"desc": "Jak běží lokální modely.",
+			"label": "Výpočet"
+		},
+		"cpu": "CPU",
+		"cpuFallback": "GPU selhala — lokální modely běží na CPU",
+		"deleteInUse": "Smazat používaný model?",
+		"download": "Stáhnout",
+		"downloadFailed": "Stahování selhalo",
+		"downloading": "Stahuji…",
+		"engineRuntime": "Runtime enginu",
+		"gpu": "GPU",
+		"gpuDetected": "Zjištěno GPU: {name}",
+		"hero": "Lokální režim",
+		"heroDesc": "Zcela offline. Zapnutím se vypne Online.",
+		"hint": {
+			"open": "Změnit na kartě Lokální",
+			"prefs": "Váš offline model řeči dobře rozpoznává jen angličtinu.",
+			"switch": "Přepnout",
+			"text": "{current} dobře rozpoznává jen angličtinu. Pro tento jazyk diktování je {suggested} mnohem přesnější."
+		},
+		"idle": {
+			"desc": "Po této době bez diktování se modely uvolní z RAM a VRAM. Stisk zkratky je znovu načte.",
+			"hour": "1 h",
+			"label": "Uvolnit z paměti",
+			"minutes": "{n} min",
+			"never": "Nikdy"
+		},
+		"installed": "Nainstalováno",
+		"llmEnable": {
+			"desc": "Upraví přepis lokálním modelem. Vypnuto = vloží se surový přepis.",
+			"label": "Úprava textu"
+		},
+		"llmModel": "Model pro úpravu textu",
+		"llmModels": "Úprava textu (LLM)",
+		"loaded": "Modely načteny do paměti",
+		"loadFailed": "Model se nepodařilo načíst",
+		"loading": "Načítám modely do paměti…",
+		"noGpu": "Nezjištěno žádné GPU — použije se CPU.",
+		"optionDownload": "stáhne se {size}",
+		"released": "Modely uvolněny z paměti",
+		"releasing": "Uvolňuji paměť…",
+		"retryGpu": "Zkusit GPU znovu",
+		"setup": {
+			"busy": "Stahuji {n} z {total}…",
+			"button": "Nastavit lokální režim",
+			"cancelAll": "Zrušit vše",
+			"doneDesc": "Podržte {shortcut} a mluvte — váš hlas nikdy neopustí tento počítač.",
+			"download": "Stáhnout doporučené · {size}",
+			"failed": "Nastavení selhalo — {reason}",
+			"failedLlm": "Rozpoznávání řeči je připravené, ale úpravu textu se nepodařilo stáhnout — {reason}",
+			"later": "Teď ne",
+			"llm": "Úprava textu",
+			"mac": "Lokální rozpoznávání řeči zatím není na macOS dostupné. Online režim funguje.",
+			"noGpu": "Bez grafické karty NVIDIA — řeč se zpracuje na CPU",
+			"noLlm": {
+				"cpu": "vypnutá — bez grafické karty NVIDIA by byla pomalá",
+				"memory": "vypnutá — málo paměti"
+			},
+			"note": {
+				"engine": "{name} pro {accel}",
+				"engines": "Programy ({engines}, {size}) se stáhnou s prvním modelem.",
+				"one": "Vyberte si jeden model řeči; tlačítko stáhne ten doporučený.",
+				"pair": "Vyberte si jeden model řeči; tlačítko stáhne doporučenou dvojici."
+			},
+			"ok": "Rozumím",
+			"queued": "Ve frontě",
+			"ready": "Připraveno",
+			"recommended": "Doporučeno",
+			"retry": "Zkusit znovu",
+			"slow": "Bez grafické karty NVIDIA trvá diktování o pár sekund déle.",
+			"stepStt": "Stahuji rozpoznávání řeči…",
+			"tile": {
+				"base": "jen angličtina",
+				"gemma": "upraví text",
+				"large": "nejlepší kvalita",
+				"llm": "Úprava",
+				"stt": "Řeč",
+				"turbo": "rychlý, malý"
+			},
+			"title": "Doporučeno pro tento počítač",
+			"unavailable": "Lokální režim zde není dostupný"
+		},
+		"sttModel": "Model rozpoznávání řeči",
+		"sttModels": "Rozpoznávání řeči (Whisper)",
+		"test": "Otestovat modely",
+		"testing": "Testování… (načítání modelů, může chvíli trvat)",
+		"testSkipped": "Vypnuto",
+		"unsupported": "Není k dispozici pro toto zařízení",
+		"verifying": "Ověřuji…"
+	},
+	"modes": {
+		"addCustom": "Přidat vlastní režim",
+		"assistant": {
+			"desc": "Přímo odpoví na vaši nadiktovanou otázku a poté vloží odpověď.",
+			"title": "Asistent"
+		},
+		"chat": {
+			"desc": "Přepíše jako krátkou, neformální zprávu.",
+			"title": "Chat"
+		},
+		"clean": {
+			"desc": "Opraví interpunkci a gramatiku, odstraní vycpávková slova. Zachová vaše formulace.",
+			"title": "Clean"
+		},
+		"customTag": "Vlastní",
+		"editor": {
+			"instructions": "Pokyny",
+			"name": "Název",
+			"titleEdit": "Upravit režim",
+			"titleNew": "Nový režim"
+		},
+		"email": {
+			"desc": "Přepíše jako e-mail připravený k odeslání.",
+			"title": "E-mail"
+		},
+		"hero": {
+			"custom": {
+				"few": "{n} vlastní",
+				"many": "{n} vlastního",
+				"one": "{n} vlastní",
+				"other": "{n} vlastních"
+			},
+			"modes": {
+				"few": "{n} režimy",
+				"many": "{n} režimu",
+				"one": "{n} režim",
+				"other": "{n} režimů"
+			},
+			"plate": "Režim",
+			"title": "Režim {name}"
+		},
+		"instructionsPlaceholder": "Popište, co udělat s nadiktovaným textem…",
+		"namePlaceholder": "Název, např. Přeložit do angličtiny",
+		"personal": {
+			"desc": "Vaše jména, termíny a to, o čem diktujete. Použijí se dvakrát: Whisper se o ně opírá při poslechu a každý AI režim je bere jako závazný pravopis. Pište slova a kontext, ne příkazy — pokyny patří do vlastního režimu.",
+			"label": "Osobní předvolby",
+			"placeholder": "Chci to ověřit a pak udělat změnu.\nJmenuji se Petr, pracuji na mobilní aplikaci pro cyklisty.\nFigma, Xcode, TestFlight, sprint, standup"
+		},
+		"raw": {
+			"desc": "Bez LLM — vloží přepis tak, jak je. Nejrychlejší.",
+			"title": "Raw"
+		},
+		"rewrite": {
+			"desc": "Přepíše nadiktovaný text, aby byl srozumitelnější. Plná kontrola — může volně přeformulovat.",
+			"title": "Přeformulování"
+		},
+		"section": {
+			"desc": "Poté co Whisper přepíše řeč, aplikace text upraví pomocí vybraného režimu. Clean, E-mail a Chat mají pojistku, aby AI nikdy neodpovídala na nadiktovaný text; Přeformulování a Asistent jsou plně ovladatelné. Každý režim kromě Raw přidává průchod AI.",
+			"label": "Zpracování textu"
+		},
+		"todo": {
+			"desc": "Promění nadiktovaný text ve strukturovaný seznam úkolů.",
+			"title": "Seznam úkolů"
+		},
+		"translate": {
+			"desc": "Řekněte cílový jazyk a text — vloží jen překlad.",
+			"title": "Překlad"
+		},
+		"untitled": "Nepojmenovaný režim"
+	},
+	"nav": {
+		"about": "O aplikaci",
+		"history": "Historie",
+		"home": "Domů",
+		"local": "Lokální",
+		"online": "Online",
+		"prompts": "Prompty",
+		"stats": "Statistiky"
+	},
+	"navDesc": {
+		"about": "Verze, aktualizace a kde najdete projekt.",
+		"history": "Uložená jen ve vašem počítači.",
+		"home": "Stav, nastavení a jak diktovat.",
+		"local": "Diktování offline s modely ve vašem počítači.",
+		"online": "Přepis a úprava textu přes Groq API.",
+		"prompts": "Jak aplikace upraví to, co řeknete.",
+		"settings": "Jazyk, zkratka, mikrofon a spouštění.",
+		"stats": "Kolik diktujete a kolik času vám to ušetří."
+	},
+	"notify": {
+		"llmFailBody": "Diktování funguje dál, ale text se vložil bez úpravy. Pokud se to opakuje, aktualizujte aplikaci.",
+		"llmFailTitle": "Úprava textu selhala",
+		"llmLimitBody": "Diktování funguje dál, ale text se už neupravuje. Kapacita se doplňuje průběžně — zkuste to později.",
+		"llmLimitTitle": "Denní limit Groq vyčerpán",
+		"modelRetiredBody": "Diktování funguje dál na záložním modelu. Aktualizujte aplikaci, aby dostala náhradu.",
+		"modelRetiredTitle": "Groq ukončil jeden z modelů",
+		"pasteManualBody": "Stiskni Ctrl+V pro vložení. Pro automatické vkládání nainstaluj {tools}.",
+		"pasteManualTitle": "Vlož text ručně",
+		"shortcutDeadBody": "Globální zkratku se nepodařilo nastavit. Restartujte aplikaci; na Linuxu se přihlaste do relace X11 nebo do prostředí s GNOME 48+ / KDE 6+.",
+		"shortcutDeadTitle": "Push-to-talk je nedostupný"
+	},
+	"online": {
+		"hero": "Režim online",
+		"hideKey": "Skrýt klíč",
+		"key": "Klíč API Groq",
+		"keyDesc": "Vytvořte si zdarma klíč na console.groq.com. Ukládá se pouze v tomto počítači.",
+		"keyPlaceholder": "gsk_…",
+		"models": {
+			"at": "naposledy {time}",
+			"desc": "Který model zpracoval váš poslední diktát. Když narazí na limit nebo ho Groq ukončí, převezme práci další v pořadí.",
+			"idle": "Zobrazí se po prvním diktátu.",
+			"llm": "Úprava textu",
+			"state": {
+				"active": "Běží",
+				"failed": "Chyba",
+				"limited": "Limit vyčerpán",
+				"retired": "Ukončen",
+				"standby": "Záloha"
+			},
+			"stt": "Přepis řeči",
+			"title": "Modely Groq"
+		},
+		"showKey": "Zobrazit klíč",
+		"test": "Test",
+		"testFail": "Chyba",
+		"testing": "Testování…",
+		"testOk": "Funguje"
+	},
+	"permissions": {
+		"ax": {
+			"desc": "Rozpoznat zkratku v jakékoli aplikaci a vložit text tam, kde píšete.",
+			"label": "Zpřístupnění"
+		},
+		"grant": "Povolit",
+		"granted": "Povoleno",
+		"mic": {
+			"desc": "Přístup k mikrofonu je odepřen — povolte ho v Nastavení systému, aby šlo nahrávat.",
+			"label": "Mikrofon"
+		},
+		"openSettings": "Otevřít Nastavení systému",
+		"subtitle": "macOS potřebuje váš souhlas, aby LetHim Voice rozpoznal zkratku a vkládal text.",
+		"title": "Potřebná oprávnění"
+	},
+	"pill": {
+		"clipboard": "Ve schránce",
+		"loading": "Načítám model…",
+		"nothing": "Nic se nezachytilo",
+		"slow": "Ještě zpracovávám…"
+	},
+	"preferences": {
+		"autostart": {
+			"desc": "Spouštět LetHim Voice automaticky po přihlášení do Windows (v oznamovací oblasti)",
+			"descLinux": "Spouštět LetHim Voice automaticky po přihlášení (v oznamovací oblasti)",
+			"descMac": "Spouštět LetHim Voice automaticky po přihlášení (v řádku nabídek)",
+			"label": "Spouštět se systémem Windows",
+			"labelLinux": "Spouštět po přihlášení",
+			"labelMac": "Spouštět při přihlášení"
+		},
+		"capture": {
+			"hint1": "F1–F12, písmena, číslice, kombinace s {ctrl} {alt} {shift}.",
+			"hint2": "{esc} — zrušit.",
+			"hintMac": "Podržte {cmd} {opt} {ctl}, nebo F1–F12, písmena, číslice.",
+			"title": "Stiskněte novou klávesu",
+			"titleMac": "Stiskněte klávesu nebo podržte modifikátor"
+		},
+		"change": "Změnit",
+		"changeInSystem": "Změnit v nastavení systému",
+		"deviceDefault": "Výchozí",
+		"hero": {
+			"micDefault": "Výchozí mikrofon",
+			"micOther": "Zvolený mikrofon",
+			"title": "Vaše nastavení"
+		},
+		"interfaceLanguage": "Jazyk rozhraní",
+		"keepClipboard": {
+			"desc": "Nadiktovaný text zůstane po vložení ve schránce a lze jej kdykoli znovu vložit. Když je vypnuto, obnoví se původní obsah schránky.",
+			"label": "Ponechat text ve schránce"
+		},
+		"microphone": "Mikrofon",
+		"microphoneFallback": "Mikrofon {id}",
+		"recognitionLanguage": "Jazyk rozpoznávání",
+		"recognitionLanguageDesc": "Jazyk, kterým mluvíte.",
+		"section": {
+			"dictation": "Diktování",
+			"general": "Obecné",
+			"system": "Systém"
+		},
+		"shortcut": "Klávesová zkratka",
+		"shortcutDesc": "Podržte ji pro nahrávání, pusťte pro vložení.",
+		"shortcutSystemManaged": "Spravuje systém"
+	},
+	"stats": {
+		"activity": "Aktivita (posledních 12 měsíců)",
+		"allTime": "Celkem",
+		"barsLabel": "Nadiktovaný čas po dnech za posledních 30 dní",
+		"cloud": "Cloud",
+		"foot": "Průměrná nahrávka {avg} · Tokeny LLM: cloud {cloud}, lokálně {local}",
+		"glance": "Přehled",
+		"heatLabel": "Aktivita diktování po dnech za posledních 12 měsíců",
+		"hero": "Dnes jste ušetřili {d}",
+		"heroBadge": {
+			"few": "{n} nahrávky dnes",
+			"many": "{n} nahrávky dnes",
+			"one": "{n} nahrávka dnes",
+			"other": "{n} nahrávek dnes"
+		},
+		"heroDesc": "Diktování je přibližně 3–4× rychlejší než psaní.",
+		"last30": "Posledních 30 dní",
+		"less": "Méně",
+		"limit": {
+			"estimated": "odhad",
+			"live": "měřeno",
+			"llmReq": "Požadavky LLM · {m}",
+			"llmTok": "Tokeny LLM · {m}",
+			"note": "Z dnešního využití vůči oficiálním denním limitům Groq. Lokální zpracování nemá limity.",
+			"sttAudio": "Přepis zvuku · za hodinu",
+			"sttRequests": "Požadavky Whisper",
+			"title": "Dnešní využití limitů Groq (bezplatný tarif)"
+		},
+		"local": "Lokální",
+		"more": "Více",
+		"noData": "Zatím žádná data — začněte diktovat.",
+		"row": {
+			"recordings": "Nahrávky",
+			"saved": "Ušetřený čas",
+			"spoken": "Čas mluvení",
+			"tokens": "Tokeny LLM"
+		},
+		"saved": {
+			"note": "Diktování je přibližně 3–4× rychlejší než psaní"
+		},
+		"thisMonth": "Tento měsíc",
+		"thisYear": "Tento rok"
+	},
+	"status": {
+		"shortcut": "Klávesová zkratka: {keys}"
+	},
+	"tray": {
+		"devRecording": "DevTools (nahrávání)",
+		"devSettings": "DevTools (nastavení)",
+		"quit": "Ukončit",
+		"update": "Restartovat a aktualizovat na {version}"
+	}
+}

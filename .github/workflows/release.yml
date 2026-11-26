@@ -1,0 +1,178 @@
+name: Release
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.v.outputs.tag }}
+      new: ${{ steps.v.outputs.new }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - id: v
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="v$(jq -r .version package.json)"
+          latest="$(gh api "repos/$GITHUB_REPOSITORY/releases/latest" --jq .tag_name 2>/dev/null)" || latest=""
+          new=false
+          if [ "$tag" != "$latest" ] && [ "$(printf '%s\n' "$latest" "$tag" | sort -V | tail -n1)" = "$tag" ]; then
+            new=true
+          fi
+          echo "latest=$latest tag=$tag new=$new"
+          printf 'tag=%s\nnew=%s\n' "$tag" "$new" >> "$GITHUB_OUTPUT"
+
+  typecheck:
+    needs: version
+    if: needs.version.outputs.new == 'true'
+    uses: ./.github/workflows/typescript.yml
+
+  test:
+    needs: version
+    if: needs.version.outputs.new == 'true'
+    uses: ./.github/workflows/test.yml
+
+  # Builds land straight on a draft release, not in workflow artifacts: one
+  # release is ~1.8 GB, more than the account's Actions artifact storage (500 MB),
+  # and release assets do not count against it. The draft goes public in
+  # `publish`, only once every platform has uploaded.
+  draft:
+    needs: [version, typecheck, test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
+        run: |
+          # A draft left by an earlier failed run may hold another commit's builds.
+          if [ "$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft 2>/dev/null)" = true ]; then
+            gh release delete "$TAG" --repo "$GITHUB_REPOSITORY" --yes
+          fi
+          gh release create "$TAG" --repo "$GITHUB_REPOSITORY" --draft --target "$GITHUB_SHA" --title "$TAG" --generate-notes
+
+  build:
+    needs: [version, draft]
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { name: win-x64, os: windows-latest }
+          - { name: mac-arm64, os: macos-latest }
+          - { name: mac-x64, os: macos-26-intel }
+          - { name: linux-x64, os: ubuntu-latest }
+          - { name: linux-arm64, os: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    # Secrets can't gate a step directly; this flag can.
+    env:
+      HAS_MAC_SIGNING: ${{ secrets.MAC_SIGNING_P12 != '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+      - uses: actions/cache@v6
+        with:
+          path: |
+            ~/.bun/install/cache
+            ~/Library/Caches/electron
+            ~/Library/Caches/electron-builder
+            ~/AppData/Local/electron/Cache
+            ~/AppData/Local/electron-builder/Cache
+            ~/.cache/electron
+            ~/.cache/electron-builder
+          key: ${{ matrix.name }}-${{ hashFiles('bun.lock') }}
+          restore-keys: ${{ matrix.name }}-
+      - run: bun ci
+      # macOS keys the Accessibility grant (hotkey + paste) to the code signature. An
+      # ad-hoc one changes every release, so after each update the grant still looks
+      # on but no longer applies and the paste is silently dropped. Signing every
+      # release with the same self-signed certificate (build/make-signing-cert.sh,
+      # exported as base64 .p12) keeps it; afterPack.ts finds it by name. Without
+      # the secret (a fork) the build is signed ad-hoc.
+      - name: Import the macOS signing certificate
+        if: runner.os == 'macOS' && env.HAS_MAC_SIGNING == 'true'
+        env:
+          P12: ${{ secrets.MAC_SIGNING_P12 }}
+          P12_PASSWORD: ${{ secrets.MAC_SIGNING_PASSWORD }}
+        run: |
+          KEYCHAIN="$RUNNER_TEMP/signing.keychain-db"
+          KEYCHAIN_PASSWORD="$(uuidgen)"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN"
+          echo "$P12" | base64 --decode > "$RUNNER_TEMP/signing.p12"
+          security import "$RUNNER_TEMP/signing.p12" -k "$KEYCHAIN" -P "$P12_PASSWORD" -T /usr/bin/codesign
+          rm "$RUNNER_TEMP/signing.p12"
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN" >/dev/null
+          security list-keychains -d user -s "$KEYCHAIN" $(security list-keychains -d user | tr -d '"')
+      - run: bun run build
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - if: runner.os == 'Windows'
+        run: powershell -NoProfile -ExecutionPolicy Bypass -File build/zip-win.ps1
+      # Both Mac builds write latest-mac.yml, each with only its own zip; `publish`
+      # joins them into one.
+      - if: runner.os == 'macOS'
+        run: mv release/latest-mac.yml "release/latest-mac-${{ matrix.name }}.yml"
+      # Token only in this step: the install and build steps above never see it.
+      - name: Upload to the draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
+        run: |
+          shopt -s nullglob
+          files=(release/*.exe release/*.dmg release/*.zip release/*.AppImage release/*.deb release/*.rpm release/*.tar.gz release/latest*.yml release/*.blockmap)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "::error::no build output in release/"
+            exit 1
+          fi
+          gh release upload "$TAG" "${files[@]}" --repo "$GITHUB_REPOSITORY" --clobber
+
+  publish:
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.version.outputs.tag }}
+        run: |
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir release
+          cd release
+          # One latest-mac.yml listing both zips; the updater picks its arch from it.
+          if [ -f latest-mac-mac-arm64.yml ]; then
+            yq eval-all '. as $f ireduce ({}; . *+ $f)' latest-mac-mac-arm64.yml latest-mac-mac-x64.yml > latest-mac.yml
+            for f in latest-mac-mac-*.yml; do
+              gh release delete-asset "$TAG" "$f" --repo "$GITHUB_REPOSITORY" --yes
+              rm "$f"
+            done
+            gh release upload "$TAG" latest-mac.yml --repo "$GITHUB_REPOSITORY" --clobber
+          fi
+          rm -f SHA256SUMS.txt # left by a re-run of this job
+          sha256sum * > SHA256SUMS.txt && sha256sum -c SHA256SUMS.txt
+          gh release upload "$TAG" SHA256SUMS.txt --repo "$GITHUB_REPOSITORY" --clobber
+          gh release edit "$TAG" --repo "$GITHUB_REPOSITORY" --draft=false --latest

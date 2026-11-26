@@ -1,0 +1,11 @@
+# Folders
+dist/
+dist-electron/
+node_modules/
+release/
+test-results/
+
+/assets/
+
+# Files
+.env*

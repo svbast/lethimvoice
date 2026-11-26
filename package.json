@@ -1,0 +1,48 @@
+{
+	"name": "lethim-voice",
+	"version": "2.0.3",
+	"packageManager": "bun@1.4.0",
+	"scripts": {
+		"assets": "bun scripts/assets.ts",
+		"build": "bun run assets && tsc && vite build && electron-builder --publish never",
+		"check": "bunx @biomejs/biome check --write --diagnostic-level=warn",
+		"dev": "tsc && concurrently \"tsc -w --preserveWatchOutput\" \"vite\" \"node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON start-electron.mts\"",
+		"postinstall": "bun node_modules/electron/install.js && bun scripts/assets.ts",
+		"typecheck": "bun tsc --noEmit && bun tsc -p src/tsconfig.web.json && bun tsc -p src/tsconfig.test.json && bun tsc -p electron/tsconfig.test.json && bun tsc -p e2e/tsconfig.json && bun tsc -p build/tsconfig.json",
+		"test": "bun test electron src",
+		"test:e2e": "tsc && vite build && playwright test"
+	},
+	"dependencies": {
+		"dbus-native": "^0.16.3",
+		"electron-updater": "^6.8.11",
+		"koffi": "^3.3.8",
+		"uiohook-napi": "^1.5.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": ">=2.5 <3",
+		"@playwright/test": ">=1.62 <2",
+		"@types/bun": "latest",
+		"@types/node": ">=24 <25",
+		"@types/react": ">=19.3 <20",
+		"@types/react-dom": ">=19.3 <20",
+		"@vitejs/plugin-react": ">=6.1 <7",
+		"concurrently": ">=10 <11",
+		"electron": "^45.5.0",
+		"electron-builder": "^26.18.0",
+		"react": "^19.3.1",
+		"react-dom": "^19.3.1",
+		"sharp": ">=0.35 <0.36",
+		"typescript": ">=7 <8",
+		"vite": ">=8.2 <9"
+	},
+	"description": "Push-to-talk voice dictation for Windows, macOS and Linux.",
+	"license": "GPL-3.0-only",
+	"homepage": "https://github.com/svbast/lethimvoice",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/svbast/lethimvoice.git"
+	},
+	"bugs": "https://github.com/svbast/lethimvoice/issues",
+	"author": "svbast <bast.seva@gmail.com>",
+	"main": "dist-electron/main.js"
+}

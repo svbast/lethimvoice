@@ -1,0 +1,138 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on",
+				"useSortedAttributes": "on",
+				"useSortedKeys": "on",
+				"useSortedProperties": "on"
+			}
+		}
+	},
+	"files": {
+		"includes": [
+			"**/*.{ts,mts,tsx,json*,css}",
+			"!dist/",
+			"!**/node_modules/",
+			"!**/package.json",
+			"!**/tsconfig.*"
+		]
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "single",
+			"quoteStyle": "single",
+			"semicolons": "asNeeded"
+		},
+		"globals": ["__APP_VERSION__"]
+	},
+	"linter": {
+		"domains": {
+			"drizzle": "none",
+			"next": "none",
+			"playwright": "none",
+			"project": "none",
+			"qwik": "none",
+			"react": "all",
+			"reactNative": "none",
+			"solid": "none",
+			"svelte": "none",
+			"tailwind": "none",
+			"test": "none",
+			"turborepo": "none",
+			"types": "none",
+			"vue": "none"
+		},
+		"rules": {
+			"a11y": "on",
+			"complexity": "on",
+			"correctness": "on",
+			"nursery": "off",
+			"performance": "on",
+			"security": "on",
+			"style": "on",
+			"suspicious": "on"
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": "off",
+						"noExcessiveLinesPerFunction": "off"
+					},
+					"correctness": {
+						"noNodejsModules": "off",
+						"noProcessGlobal": "off",
+						"useImportExtensions": "off",
+						"useJsonImportAttributes": "off"
+					},
+					"performance": {
+						"noJsxPropsBind": "off",
+						"noNamespaceImport": "off",
+						"noReExportAll": "off",
+						"useSolidForComponent": "off",
+						"useTopLevelRegex": "info"
+					},
+					"style": {
+						"noCommonJs": "off",
+						"noDefaultExport": "off",
+						"noDescendingSpecificity": "off",
+						"noExcessiveLinesPerFile": "off",
+						"noImplicitBoolean": "off",
+						"noMagicNumbers": "off",
+						"noTernary": "off",
+						"useBlockStatements": "off",
+						"useExportsLast": "off",
+						"useFilenamingConvention": "info",
+						"useGlobalThis": "off",
+						"useNamingConvention": "off"
+					},
+					"suspicious": {
+						"noConsole": "info",
+						"noLeakedRender": "off",
+						"useBaseline": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["**/*.test.*"],
+			"linter": {
+				"domains": {
+					"test": "recommended"
+				},
+				"rules": {
+					"correctness": {
+						"noComponentHookFactories": "off"
+					},
+					"style": {
+						"noProcessEnv": "off",
+						"useComponentExportOnlyModules": "off"
+					},
+					"suspicious": {
+						"noConditionalExpect": "off",
+						"useAwait": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["e2e/**"],
+			"linter": {
+				"domains": {
+					"playwright": "recommended"
+				}
+			}
+		}
+	],
+	"vcs": {
+		"clientKind": "git",
+		"defaultBranch": "master",
+		"enabled": true,
+		"useIgnoreFile": true
+	}
+}

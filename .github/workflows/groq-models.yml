@@ -1,0 +1,44 @@
+name: Groq models
+
+# Daily: every model the app ships still answers its exact dictation request, and
+# none is on Groq's deprecation list (announced 2–8 weeks before shutdown). A red
+# run emails whoever last edited this schedule. Needs the LIVE_GROQ_KEY repository
+# secret: a Groq key of our own, never a user's.
+on:
+  schedule:
+    - cron: '23 5 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  groq-models:
+    name: Groq models
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+
+      # The check imports main-process modules only, under the test preload's fake
+      # electron: no Electron binary or generated assets needed.
+      - name: Install dependencies
+        run: bun install --frozen-lockfile --ignore-scripts
+
+      - name: Check every shipped model
+        env:
+          LIVE_GROQ_KEY: ${{ secrets.LIVE_GROQ_KEY }}
+        run: |
+          if [ -z "$LIVE_GROQ_KEY" ]; then
+            echo "::error::LIVE_GROQ_KEY repository secret is not set"
+            exit 1
+          fi
+          bun test electron/pipeline/groq.live.test.ts

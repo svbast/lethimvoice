@@ -1,0 +1,11 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"lib": ["ES2025", "DOM"],
+		"noEmit": true,
+		"rootDir": "..",
+		"tsBuildInfoFile": "../node_modules/.tmp/tsconfig.e2e.tsbuildinfo"
+	},
+	"include": ["./**/*.ts", "../src/**/*.d.ts"],
+	"exclude": []
+}

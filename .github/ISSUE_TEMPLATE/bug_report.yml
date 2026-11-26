@@ -1,0 +1,42 @@
+name: Bug report
+description: Something doesn't work as it should.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The About tab shows it.
+      placeholder: 2.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Windows
+        - macOS
+        - Linux (X11)
+        - Linux (Wayland)
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Dictation mode
+      options:
+        - Online (Groq)
+        - Offline (local models)
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Screenshots, the error the pill showed, your desktop environment on Linux. Never paste your API key.
