@@ -57,8 +57,31 @@ const CODE_TO_MODIFIER: Record<string, string> = {
 	ShiftRight: 'ShiftRight',
 }
 
-export function eventToModifier(e: KeyboardEvent): string | null {
-	return CODE_TO_MODIFIER[e.code] || null
+/**
+ * A modifier held alone during shortcut capture ("CtrlRight", "MetaRight"): the
+ * push-to-talk default on every platform. Feed it every keydown that is not a
+ * finished combo and every keyup; up() names the modifier once the only modifier
+ * pressed is released with nothing else pressed in between.
+ */
+export function loneModifier() {
+	let held: string | null = null
+	let mixed = false
+	return {
+		down(e: Pick<KeyboardEvent, 'code'>): void {
+			const mod = CODE_TO_MODIFIER[e.code]
+			if (!mod) mixed = true
+			else if (!held) held = mod
+			else if (mod !== held) mixed = true
+		},
+		up(e: Pick<KeyboardEvent, 'code'>): string | null {
+			const mod = CODE_TO_MODIFIER[e.code]
+			if (!mod || mod !== held) return null
+			if (!mixed) return mod
+			held = null
+			mixed = false
+			return null
+		},
+	}
 }
 
 // Human-facing label for a stored shortcut token. macOS gets native symbols
