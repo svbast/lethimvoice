@@ -12,7 +12,7 @@ import { renderTemplate } from '../../components/renderTemplate'
 import Segmented from '../../components/Segmented'
 import Switch from '../../components/Switch'
 import { DEFAULT_LOCALE, type Key, setLocale, useT } from '../../i18n'
-import { eventToModifier, eventToShortcut } from '../../utils/keyCode'
+import { eventToShortcut, loneModifier } from '../../utils/keyCode'
 
 interface PreferencesSettings {
 	backend?: string
@@ -431,8 +431,7 @@ function CaptureDialog({
 	const t = useT()
 	const titleId = useId()
 	useEffect(() => {
-		let modCandidate: string | null = null // token of a lone modifier being held (macOS push-to-talk)
-		let otherPressed = false // another key intervened → not a clean lone-modifier hold
+		const lone = loneModifier()
 
 		const down = (e: KeyboardEvent): void => {
 			e.preventDefault()
@@ -442,45 +441,27 @@ function CaptureDialog({
 				return
 			}
 			const combo = eventToShortcut(e) // non-null only for an ordinary key (+ optional mods)
-			if (combo) {
-				onCapture(combo)
-				return
-			}
-			// A bare modifier went down. On macOS a modifier held alone is a valid
-			// push-to-talk trigger — remember it and finalize when it's released.
-			if (!isMac) return
-			const mod = eventToModifier(e)
-			if (mod) {
-				if (!modCandidate) modCandidate = mod
-				else if (mod !== modCandidate) otherPressed = true
-			} else otherPressed = true
+			if (combo) onCapture(combo)
+			else lone.down(e) // a bare modifier: finished when it is released alone
 		}
 
 		const up = (e: KeyboardEvent): void => {
 			e.preventDefault()
 			e.stopPropagation()
-			const mod = eventToModifier(e)
-			if (mod && mod === modCandidate && !otherPressed) {
-				onCapture(mod)
-				return
-			}
-			if (mod === modCandidate) {
-				modCandidate = null
-				otherPressed = false
-			}
+			const mod = lone.up(e)
+			if (mod) onCapture(mod)
 		}
 
 		window.addEventListener('keydown', down, { capture: true })
-		if (isMac) window.addEventListener('keyup', up, { capture: true })
+		window.addEventListener('keyup', up, { capture: true })
 		return () => {
 			window.removeEventListener('keydown', down, { capture: true })
-			if (isMac) window.removeEventListener('keyup', up, { capture: true })
+			window.removeEventListener('keyup', up, { capture: true })
 		}
-	}, [onCancel, onCapture, isMac])
+	}, [onCancel, onCapture])
 
 	const esc = <kbd className='kbd'>Esc</kbd>
-	// macOS shows native symbols (⌘ ⌥ ⌃) and mentions the "hold a modifier" gesture;
-	// other platforms keep the Ctrl/Alt/Shift wording.
+	// macOS shows native symbols (⌘ ⌥ ⌃); other platforms the Ctrl/Alt/Shift names.
 	const hint = isMac
 		? renderTemplate(t('preferences.capture.hintMac'), {
 				cmd: <kbd className='kbd'>⌘</kbd>,
@@ -512,11 +493,7 @@ function CaptureDialog({
 					<PixelIcon className='pxi-lg' name='keyboard' />
 				</span>
 				<h2 className='text-lg font-semibold' id={titleId}>
-					{t(
-						isMac
-							? 'preferences.capture.titleMac'
-							: 'preferences.capture.title',
-					)}
+					{t('preferences.capture.title')}
 				</h2>
 				<p className='muted capture-hint'>
 					{hint}

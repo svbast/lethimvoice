@@ -372,11 +372,10 @@
 			"labelMac": "Start at login"
 		},
 		"capture": {
-			"hint1": "F1–F12, letters, digits, combinations with {ctrl} {alt} {shift}.",
+			"hint1": "Hold {ctrl} {alt} {shift}, or F1–F12, letters, digits, also combined with them.",
 			"hint2": "{esc} — cancel.",
 			"hintMac": "Hold {cmd} {opt} {ctl}, or F1–F12, letters, digits.",
-			"title": "Press a new key",
-			"titleMac": "Press a key or hold a modifier"
+			"title": "Press a key or hold a modifier"
 		},
 		"change": "Change",
 		"changeInSystem": "Change in system settings",
