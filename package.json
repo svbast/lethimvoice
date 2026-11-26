@@ -1,6 +1,6 @@
 {
 	"name": "lethim-voice",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"packageManager": "bun@1.4.0",
 	"scripts": {
 		"assets": "bun scripts/assets.ts",
